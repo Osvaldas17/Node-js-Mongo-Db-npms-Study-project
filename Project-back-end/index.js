@@ -11,13 +11,11 @@ const corsOptions = {
     exposedHeaders: ['projectauth']
 }
 
-
-
 const mongoose = require('mongoose');
 
 const router = require('./routes/routes')
 
-mongoose.connect('mongodb://localhost/Project-Db', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/ProjectDb', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection
 

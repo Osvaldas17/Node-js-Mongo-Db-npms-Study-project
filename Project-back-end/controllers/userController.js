@@ -5,8 +5,7 @@ const Session = require ('../models/sessionModel')
 
 const signUp = async (req, res) => {
     try {
-  
-  
+
       const user = new User({
         email: req.body.email,
         password: req.body.password
@@ -25,9 +24,7 @@ const signUp = async (req, res) => {
     const allUsers = await User.find()
     res.send(allUsers)
   }
-  
 
-  
   const signIn = async (req, res) => {
     try {
       let user = await User.findOne({
@@ -43,32 +40,27 @@ const signUp = async (req, res) => {
         message: 'Wrong password'
       }
 
-  
       let token = jwt.sign({
         id: user._id,
         role: 'user'
       }, process.env.JWT_PASSWORD)
-  
-  
-  
+
+
       let session = new Session({
         sessionToken: token,
         expires: new Date().setMonth(new Date().getMonth() + 1)
       })
   
       await session.save()
-  
-  
-  
- 
-      res.header('twitterauth', token).send(user)
+
+
+      res.header('projectauth', token).send(user)
   
     } catch (e) {
       res.status(400).send(e)
     }
   }
-  
-  
+
   const currentUser = (req, res) => {
     res.send(req.user)
   }
@@ -85,8 +77,7 @@ const signUp = async (req, res) => {
         message: 'Something went wrong'
       })
     }
-  
-  
+
   }
   
   const updateUserInfo = async (req, res) => {
