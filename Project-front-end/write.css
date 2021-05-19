@@ -147,7 +147,7 @@ main {
     display: none;
 }
 .empty-footer {
-    height: 1000px;
+    height: 500px;
 }
 
 @media screen and (max-width: 1000px) {
