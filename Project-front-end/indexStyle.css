@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: gt-super, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 .main-container {
     width: 100%;
