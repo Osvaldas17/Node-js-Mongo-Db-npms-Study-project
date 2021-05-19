@@ -11,7 +11,6 @@
 
 .second-container {
     border-bottom: solid 1px black;
-    height: 484px;
     width: 100%;
     background-color: rgb(255,192,23);
 }
@@ -33,16 +32,15 @@
 
 .navBar-con {
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     height: 75px;
-    width: 64%;
+    width: 70%;
     align-items: center;
 }
 
 .ul-navBar {
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
     align-items: center;
     height: 100px;
 }
@@ -60,16 +58,14 @@
 }
 
 .medium-word {
-    margin-left: 15px;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .getStarted-con {
-    margin-right: 40px;
     border: solid black 1px;
     border-radius: 50px;
-    width: 120px;
+    width: 110px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -94,25 +90,26 @@
 
 .header-con {
     margin: 0 auto;
-    width: 63%;
+    width: 70%;
     background-color: rgb(255,192,23);
+}
+.header-con-sub {
+    width: 550px;
 }
 
 .header-con h2{
     margin-bottom: 50px;
     padding-top: 20px;
-    width: 50%;
     font-size: 3.8rem;
     font-weight: 400;
 }
 
 .header-con p{
-    width: 50%;
     font-size: 1.2rem;
 }
 
 .getStarted-con-head {
-    margin-top: 30px;
+    margin: 30px 0;
     border: solid black 1px;
     border-radius: 50px;
     width: 120px;
@@ -137,24 +134,17 @@
 
 .register-window {
     display: none;
-    width: 36%;
+    width: 680px;
     height: 750px;
     position: absolute;
     top: 140px;
-    left: 620px;
     background-color: white;
     z-index: 1;
+    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .register-window.active {
     display: block;
-    width: 36%;
-    height: 750px;
-    position: absolute;
-    top: 140px;
-    left: 620px;
-    background-color: white;
-    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .exit-window {
@@ -179,14 +169,19 @@
     justify-content: center;
     align-items: center;
 }
-
+.centering-window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
 .reg-con {
     margin-bottom: 30px;
 }
 
 .reg-con input {
     height: 40px;
-    width: 300px;
+    width: 290px;
     border-radius: 5px;
     border: rgb(92, 88, 88) solid 0.5px;
 }
@@ -229,24 +224,17 @@
 
 .login-window {
     display: none;
-    width: 36%;
+    width: 680px;
     height: 750px;
     position: absolute;
     top: 140px;
-    left: 620px;
     background-color: white;
     z-index: 1;
+    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .login-window.active2 {
     display: block;
-    width: 36%;
-    height: 750px;
-    position: absolute;
-    top: 140px;
-    left: 620px;
-    background-color: white;
-    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .login-btn{
@@ -288,7 +276,7 @@
         display: flex;
         margin: 0 auto;
         height: 75px;
-        width: 90%;
+        width: 80%;
         align-items: center;
     }
     
@@ -297,8 +285,7 @@
     
     .header-con {
         margin: 0 auto;
-        width: 88.5%;
-        height: 340px;
+        width: 80%;
         background-color: rgb(255,192,23);
     }
     
@@ -326,10 +313,29 @@
     
     .header-con {
         margin: 0 auto;
-        width: 88.5%;
-        height: 340px;
+        width: 90%;
         background-color: rgb(255,192,23);
     }
     
 
+}
+@media screen and (max-width: 760px) {
+    .hide-li {
+        display: none;
+    }
+    .login-window {
+        width: 100%;
+    }
+    .register-window {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .header-con-sub {
+        width: 100%;
+    }
+    .sign-in {
+        display: none;
+    }
 }

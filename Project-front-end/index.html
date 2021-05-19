@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Project-front-end/indexStyle.css">
-    <script src="/Project-front-end/index.js" defer></script>
+    <link rel="stylesheet" href="indexStyle.css">
+    <script src="index.js" defer></script>
     <title>Medium</title>
 </head>
 <body>
     <!-- log in -->
-    <div class="login-window">
+    <div class="centering-window">
+        <div class="login-window">
         <div class="exit-window">
             <span id="exitBtn-login" class="x-btn">X</span>
         </div>
@@ -30,13 +31,15 @@
                 <button class="login-btn" type="submit">Log In</button>
                 <div class="create-text">
                     <p>No account?</p>
-                    <p class="create-one">Create one</p>
+                    <p id="sign-up-green" class="create-one">Create one</p>
                 </div>
             </div>
         </form>
     </div>
+    </div>
     <!-- regiter Window -->
-    <div class="register-window">
+    <div class="centering-window">
+        <div class="register-window">
         <div class="exit-window">
             <span id="exitBtn" class="x-btn">X</span>
         </div>
@@ -60,10 +63,11 @@
                 <button class="reg-btn" type="submit">Register</button>
                 <div class="create-text">
                     <p>Already have an account?</p>
-                    <p class="create-one">Sign in</p>
+                    <p id="sign-in-green" class="create-one">Sign in</p>
                 </div>
             </div>    
         </form>
+    </div>
     </div>
     <!-- main container -->
     <div class="white-back">
@@ -72,13 +76,13 @@
             <nav class="navBar">
                     <div class="navBar-con">
                         <div class="medium-logo">
-                            <h1 class="medium-word">MEDIUM</h1>
+                            <img src="https://cdn-static-1.medium.com/sites/medium.com/creators/images/Medium-Logo-Black-RGB-1.svg" alt="">
                         </div>
                         <ul class="ul-navBar">
-                            <li class="li-con">Our Story</li>
-                            <li class="li-con">Membership</li>
-                            <li class="li-con">Write</li>
-                            <li id="logIn" class="li-con">Sign In</li>
+                            <li class="li-con hide-li">Our Story</li>
+                            <li class="li-con hide-li">Membership</li>
+                            <li class="li-con hide-li">Write</li>
+                            <li id="logIn" class="li-con sign-in">Sign In</li>
                             <div class="getStarted-con">
                                 <li id="getStarted" class="getStarted">Get Started</li>
                             </div>    
@@ -90,15 +94,17 @@
                     <div class="empty-div"></div>
                     <!-- header -->
                     <header class="header-con">
-                        <div class="text-con">
-                            <h2>Where good ideas find you</h2>
-                        </div>
-                        <div>
-                            <p>Read and share new perspectives on just about any topic. Everyone’s welcome. Learn more.</p>
-                        </div>
-                        <div>
-                            <div class="getStarted-con-head">
-                                <li class="getStarted-head">Get Started</li>
+                        <div class="header-con-sub">
+                            <div class="text-con">
+                                <h2>Where good ideas find you</h2>
+                            </div>
+                            <div>
+                                <p>Read and share new perspectives on just about any topic. Everyone’s welcome. Learn more.</p>
+                            </div>
+                            <div>
+                                <div class="getStarted-con-head">
+                                    <li class="getStarted-head">Get Started</li>
+                                </div>
                             </div>
                         </div>
                     </header>
