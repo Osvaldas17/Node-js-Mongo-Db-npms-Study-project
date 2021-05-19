@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container {
+    width: 100%;
+    height: 1500px;
+}
+
+.second-container {
+    border-bottom: solid 1px black;
+    height: 484px;
+    width: 100%;
+    background-color: rgb(255,192,23);
+}
+
+/* nav bar */
+
+.navBar {
+    border-bottom: black solid 1px;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(255,192,23);
+}
+
+.navBar-con {
+    display: flex;
+    margin: 0 auto;
+    height: 75px;
+    width: 64%;
+    align-items: center;
+}
+
+.ul-navBar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+}
+
+.li-con {
+    padding-right: 10px;
+    margin-right: 20px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.medium-logo {
+    width: 50%;
+}
+
+.medium-word {
+    margin-left: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.getStarted-con {
+    margin-right: 40px;
+    border: solid black 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+}
+
+.getStarted {
+    list-style: none;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.empty-div {
+    width: 100%;
+    height: 74px;
+}
+
+/* header */
+
+.header-con {
+    border-bottom: solid black 1px;
+    margin: 0 auto;
+    width: 63%;
+    height: 410px;
+    bottom: 100px;
+    background-color: rgb(255,192,23);
+}
+
+.header-con h2{
+    padding-top: 20px;
+    width: 50%;
+    height: 240px;
+    font-size: 4.5rem;
+}
+
+.header-con p{
+    width: 50%;
+    height: 70px;
+    font-size: 1.2rem;
+}
+
+.getStarted-con-head {
+    border: solid black 1px;
+    border-radius: 50px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255,192,23);
+}
+
+.getStarted-head {
+    list-style: none;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+/* register-window */
+
+.register-window {
+    display: none;
+    width: 36%;
+    height: 750px;
+    position: absolute;
+    top: 140px;
+    left: 620px;
+    background-color: white;
+}
+
+.register-window.active {
+    display: block;
+    width: 36%;
+    height: 750px;
+    position: absolute;
+    top: 140px;
+    left: 620px;
+    background-color: white;
+    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
+}
+
+.exit-window {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.x-btn {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.form-container {
+    height: 620px;
+    
+}
+
+.register-con {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-con {
+    margin-bottom: 30px;
+}
+
+.reg-con input {
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    border: rgb(92, 88, 88) solid 0.5px;
+}
+
+.reg-btn {
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    border: rgb(92, 88, 88) solid 0.5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.reg-btn:hover {
+    background-color: rgb(54, 53, 53);
+}
+
+.reg-btn:active {
+    background-color: rgb(88, 87, 87);
+}
+
+.join-text {
+    display: flex;
+    justify-content: center;
+}
+
+.join-text h2 {
+    margin-top: 100px;
+}
+
+
+.fade {
+    filter: brightness(0.4);
+    transition: 0.4s ease-in-out;
+    position: absolute;
+}
+
+/* login */
+
+.login-window {
+    display: none;
+    width: 36%;
+    height: 750px;
+    position: absolute;
+    top: 140px;
+    left: 620px;
+    background-color: white;
+}
+
+.login-window.active2 {
+    display: block;
+    width: 36%;
+    height: 750px;
+    position: absolute;
+    top: 140px;
+    left: 620px;
+    background-color: white;
+    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
+}
+
+.login-btn{
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    border: rgb(92, 88, 88) solid 0.5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: rgb(54, 53, 53);
+}
+
+.login-btn:active {
+    background-color: rgb(88, 87, 87);
+}
