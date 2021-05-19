@@ -16,6 +16,11 @@
     background-color: rgb(255,192,23);
 }
 
+.white-back.active3 {
+    display: block;
+    opacity: 0.1;
+}
+
 /* nav bar */
 
 .navBar {
@@ -43,10 +48,11 @@
 }
 
 .li-con {
-    padding-right: 10px;
     margin-right: 20px;
     list-style: none;
     cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 50;
 }
 
 .medium-logo {
@@ -87,28 +93,26 @@
 /* header */
 
 .header-con {
-    border-bottom: solid black 1px;
     margin: 0 auto;
     width: 63%;
-    height: 410px;
-    bottom: 100px;
     background-color: rgb(255,192,23);
 }
 
 .header-con h2{
+    margin-bottom: 50px;
     padding-top: 20px;
     width: 50%;
-    height: 240px;
-    font-size: 4.5rem;
+    font-size: 3.8rem;
+    font-weight: 400;
 }
 
 .header-con p{
     width: 50%;
-    height: 70px;
     font-size: 1.2rem;
 }
 
 .getStarted-con-head {
+    margin-top: 30px;
     border: solid black 1px;
     border-radius: 50px;
     width: 120px;
@@ -139,6 +143,7 @@
     top: 140px;
     left: 620px;
     background-color: white;
+    z-index: 1;
 }
 
 .register-window.active {
@@ -230,6 +235,7 @@
     top: 140px;
     left: 620px;
     background-color: white;
+    z-index: 1;
 }
 
 .login-window.active2 {
@@ -259,4 +265,71 @@
 
 .login-btn:active {
     background-color: rgb(88, 87, 87);
+}
+
+.create-one{
+    color: rgb(26,137,23);
+    font-weight: bold;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.create-text {
+    display: flex;
+    margin-top: 30px;
+}
+
+
+@media screen and (max-width: 1210px) {
+   
+    /* nav bar */
+    
+    .navBar-con {
+        display: flex;
+        margin: 0 auto;
+        height: 75px;
+        width: 90%;
+        align-items: center;
+    }
+    
+ 
+    /* header */
+    
+    .header-con {
+        margin: 0 auto;
+        width: 88.5%;
+        height: 340px;
+        background-color: rgb(255,192,23);
+    }
+    
+
+}
+
+@media screen and (max-width: 1049px) {
+   
+    /* nav bar */
+    
+    .navBar-con {
+        display: flex;
+        margin: 0 auto;
+        height: 75px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .medium-logo {
+        width: 35%;
+    }
+    
+ 
+    /* header */
+    
+    .header-con {
+        margin: 0 auto;
+        width: 88.5%;
+        height: 340px;
+        background-color: rgb(255,192,23);
+    }
+    
+
 }
