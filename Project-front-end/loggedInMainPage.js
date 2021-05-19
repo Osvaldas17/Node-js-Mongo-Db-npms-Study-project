@@ -10,15 +10,15 @@ const profileImgCon = document.querySelector('#profile-img-con')
 const profileImgDropDownMenu = document.querySelector('#profile-img-drop-down')
 
 
-// window.addEventListener('DOMContentLoaded', () => {
-//     token = localStorage.getItem('projectauth')
-//
-//     if (!token) return window.location.href = ''
-//
-//     user = JSON.parse(localStorage.getItem('user'))
-//
-//     setUpNavBar()
-// })
+window.addEventListener('DOMContentLoaded', () => {
+    token = localStorage.getItem('projectauth')
+
+    if (!token) return window.location.href = 'index.html'
+
+    user = JSON.parse(localStorage.getItem('user'))
+
+    setUpNavBar()
+})
 
 const setUpNavBar = () => {
     document.querySelector('#userName').textContent = user.username
@@ -48,5 +48,5 @@ const logOut = () => {
     localStorage.removeItem('user')
 
 
-    window.location.href = ''
+    window.location.href = 'index.html'
 }
