@@ -13,7 +13,7 @@ const profileImgDropDownMenu = document.querySelector('#profile-img-drop-down')
 // window.addEventListener('DOMContentLoaded', () => {
 //     token = localStorage.getItem('projectauth')
 //
-//     if (!token) return window.location.href = 'index.html'
+//     if (!token) return window.location.href = ''
 //
 //     user = JSON.parse(localStorage.getItem('user'))
 //
@@ -48,5 +48,5 @@ const logOut = () => {
     localStorage.removeItem('user')
 
 
-    window.location.href = 'index.html'
+    window.location.href = ''
 }
