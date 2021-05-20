@@ -1,6 +1,11 @@
 
 let url = 'http://localhost:3000/api/v1'
 
+window.addEventListener('DOMContentLoaded', () => {
+    token = localStorage.getItem('projectauth')
+
+    if (token) return window.location.href = 'loggedInMainPage.html'
+})
 
 document.getElementById('form').addEventListener('submit', async (event) => {
     event.preventDefault()
