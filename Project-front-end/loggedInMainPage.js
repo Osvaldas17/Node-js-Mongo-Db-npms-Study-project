@@ -3,6 +3,10 @@ let token;
 let url = 'http://localhost:3000/api/v1';
 let user;
 
+document.querySelector('#sign-out').addEventListener('click',() => {
+    logOut()
+})
+
 
 const searchWindow = document.querySelector('#search-window')
 const searchWindowIcon = document.querySelector('#search-window-icon')
@@ -21,7 +25,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const setUpNavBar = () => {
-    document.querySelector('#userName').textContent = user.username
+    console.log(user)
+    document.querySelector('#userName').textContent = user.userName
     document.querySelector('#userEmail').textContent = user.email
     if (user.profileImage) document.querySelector('#navProfileImage').src = user.profileImage
     if (user.profileImage) document.querySelector('#ProfileImage').src = user.profileImage
@@ -33,6 +38,8 @@ searchWindowIcon.addEventListener('click', () => {
 profileImgCon.addEventListener('click',() => {
     profileImgDropDownMenu.classList.toggle('d-block')
 })
+
+
 
 const logOut = () => {
 

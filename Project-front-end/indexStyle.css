@@ -44,6 +44,9 @@
     align-items: center;
     height: 100px;
 }
+.ul-navBar li:hover {
+    text-decoration: underline;
+}
 
 .li-con {
     margin-right: 20px;
@@ -72,13 +75,13 @@
     justify-content: center;
     text-align: center;
     background-color: black;
+    cursor: pointer;
 }
 
 .getStarted {
     list-style: none;
     text-align: center;
     color: white;
-    cursor: pointer;
 }
 
 .empty-div {
@@ -119,13 +122,13 @@
     justify-content: center;
     text-align: center;
     background-color: rgb(255,192,23);
+    cursor: pointer;
 }
 
 .getStarted-head {
     list-style: none;
     text-align: center;
     color: black;
-    cursor: pointer;
 }
 
 

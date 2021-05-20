@@ -1,8 +1,15 @@
 
 const signInGreen = document.querySelector('#sign-in-green')
 const signUpGreen = document.querySelector('#sign-up-green')
+const writePage = document.querySelector('#goToWritePage')
 
 let url = 'http://localhost:3000/api/v1'
+
+window.addEventListener('DOMContentLoaded', () => {
+    token = localStorage.getItem('projectauth')
+
+    if (token) return window.location.href = 'loggedInMainPage.html'
+})
 
 // register
 document.querySelector('#getStarted').addEventListener('click', () => {
@@ -19,6 +26,10 @@ signUpGreen.addEventListener('click',() => {
     document.querySelector('.login-window').classList.toggle('active2')
     document.querySelector('.register-window').classList.toggle('active')
 })
+document.querySelector('#getStartedHead').addEventListener('click', () => {
+    document.querySelector('.register-window').classList.toggle('active')
+    document.querySelector('.white-back').classList.toggle('active3')
+})
 
 // login
 document.querySelector('#logIn').addEventListener('click', (e) => {
@@ -34,6 +45,12 @@ document.querySelector('#exitBtn-login').addEventListener('click', () => {
 signInGreen.addEventListener('click',() => {
     document.querySelector('.login-window').classList.toggle('active2')
     document.querySelector('.register-window').classList.toggle('active')
+})
+
+// go to write page
+
+writePage.addEventListener('click',() => {
+    window.location.href = 'write.html'
 })
 
 // Sign in
@@ -61,7 +78,7 @@ document.getElementById('sign-in-btn').addEventListener('click', async (e) => {
         if (response.status != 200) throw await response.json()
         let token = response.headers.get('projectauth')
         localStorage.setItem('projectauth', token)
-        localStorage.setItem('todo-user',await JSON.stringify( await response.json()))
+        localStorage.setItem('user',await JSON.stringify( await response.json()))
         window.location.href = 'loggedInMainPage.html'
     } catch (e) {
         alert(e.message)
