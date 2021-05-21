@@ -11,7 +11,6 @@
 
 .second-container {
     border-bottom: solid 1px black;
-    height: 484px;
     width: 100%;
     background-color: rgb(255,192,23);
 }
@@ -33,18 +32,20 @@
 
 .navBar-con {
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     height: 75px;
-    width: 64%;
+    width: 70%;
     align-items: center;
 }
 
 .ul-navBar {
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
     align-items: center;
     height: 100px;
+}
+.ul-navBar li:hover {
+    text-decoration: underline;
 }
 
 .li-con {
@@ -60,29 +61,27 @@
 }
 
 .medium-word {
-    margin-left: 15px;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .getStarted-con {
-    margin-right: 40px;
     border: solid black 1px;
     border-radius: 50px;
-    width: 120px;
+    width: 110px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: black;
+    cursor: pointer;
 }
 
 .getStarted {
     list-style: none;
     text-align: center;
     color: white;
-    cursor: pointer;
 }
 
 .empty-div {
@@ -94,25 +93,26 @@
 
 .header-con {
     margin: 0 auto;
-    width: 63%;
+    width: 70%;
     background-color: rgb(255,192,23);
+}
+.header-con-sub {
+    width: 550px;
 }
 
 .header-con h2{
     margin-bottom: 50px;
     padding-top: 20px;
-    width: 50%;
     font-size: 3.8rem;
     font-weight: 400;
 }
 
 .header-con p{
-    width: 50%;
     font-size: 1.2rem;
 }
 
 .getStarted-con-head {
-    margin-top: 30px;
+    margin: 30px 0;
     border: solid black 1px;
     border-radius: 50px;
     width: 120px;
@@ -122,13 +122,13 @@
     justify-content: center;
     text-align: center;
     background-color: rgb(255,192,23);
+    cursor: pointer;
 }
 
 .getStarted-head {
     list-style: none;
     text-align: center;
     color: black;
-    cursor: pointer;
 }
 
 
@@ -137,24 +137,20 @@
 
 .register-window {
     display: none;
-    width: 36%;
+    width: 680px;
     height: 750px;
     position: absolute;
     top: 140px;
-    left: 620px;
     background-color: white;
     z-index: 1;
+    box-shadow: 0 1px 11px 0 rgb(221 221 221);
+    -webkit-box-shadow: 0 1px 11px 0 rgb(221 221 221);
+    -moz-box-shadow: 0 1px 11px 0 rgb(221,221,221);
+    border-radius: 4px;
 }
 
 .register-window.active {
     display: block;
-    width: 36%;
-    height: 750px;
-    position: absolute;
-    top: 140px;
-    left: 620px;
-    background-color: white;
-    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .exit-window {
@@ -179,23 +175,32 @@
     justify-content: center;
     align-items: center;
 }
-
+.centering-window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
 .reg-con {
     margin-bottom: 30px;
 }
 
 .reg-con input {
-    height: 40px;
+    padding: 9px 18px 12px;
+    outline: none;
+    border-style: none;
     width: 300px;
-    border-radius: 5px;
-    border: rgb(92, 88, 88) solid 0.5px;
+    border-radius: 25px;
+    box-shadow: 0 1px 11px 0 rgb(221,221,221);
+    -webkit-box-shadow: 0 1px 11px 0 rgb(221,221,221);
+    -moz-box-shadow: 0 1px 11px 0 rgb(221,221,221);
 }
 
 .reg-btn {
-    border-radius: 5px;
-    width: 120px;
-    height: 50px;
-    border: rgb(92, 88, 88) solid 0.5px;
+    width: 150px;
+    border-radius: 25px;
+    padding: 9px 18px 12px;
+    border: rgb(92, 88, 88) solid 1px;
     background-color: black;
     color: white;
     cursor: pointer;
@@ -229,31 +234,27 @@
 
 .login-window {
     display: none;
-    width: 36%;
+    width: 680px;
     height: 750px;
     position: absolute;
     top: 140px;
-    left: 620px;
     background-color: white;
     z-index: 1;
+    box-shadow: 0 1px 11px 0 rgb(221 221 221);
+    -webkit-box-shadow: 0 1px 11px 0 rgb(221 221 221);
+    -moz-box-shadow: 0 1px 11px 0 rgb(221,221,221);
+    border-radius: 4px;
 }
 
 .login-window.active2 {
     display: block;
-    width: 36%;
-    height: 750px;
-    position: absolute;
-    top: 140px;
-    left: 620px;
-    background-color: white;
-    box-shadow: -1px 5px 8px 10px rgba(0,0,0,0.07);
 }
 
 .login-btn{
-    border-radius: 5px;
-    width: 120px;
-    height: 50px;
-    border: rgb(92, 88, 88) solid 0.5px;
+    padding: 9px 18px 12px;
+    border-radius: 25px;
+    width: 150px;
+    border: rgb(92, 88, 88) solid 1px;
     background-color: black;
     color: white;
     cursor: pointer;
@@ -279,6 +280,134 @@
     margin-top: 30px;
 }
 
+/* third-container */
+
+.third-container {
+    width: 100%;
+    border-bottom: solid rgb(197, 192, 192) 1px;
+    padding-bottom: 30px;
+}
+
+.trendings-con {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.trend-onMedium {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+.trend-onMedium span {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.top-trends {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tend-arrow img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.trend-con {
+    width: 33.33%;
+}
+
+.trend-con {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.trend-number {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.trend-number span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(230,235,241);
+}
+
+.trend-content {
+    width: 85%;
+}
+
+.trend-content img {
+    width: 20px;
+}
+
+.trend-content span {
+    font-size: 0.8rem;
+}
+
+.trend-content h3 {
+    margin: 13px 0 13px 0;
+    font-size: 0.9rem;
+}
+
+.time-trend {
+    color: rgb(134, 134, 134);
+    padding-top: 25px;
+}
+
+/* fourth container */
+
+.fourth-container {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.articles-con {
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.discover-zone {
+    width: 40%;
+}
+
+.article-zone {
+    width: 100%;
+}
+
+.article-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.article-text {
+    width: 60%;
+}
+
+.article-image {
+    width: 40%;
+
+}
+
+.article-text h3 {
+    padding: 7px 0 7px 0; 
+}
+
+.article-text p {
+    padding: 4px 0 11px 0;
+    color: rgb(95, 95, 95);
+}
+
+.article-text img {
+    padding-right: 8px;
+}
+
 
 @media screen and (max-width: 1210px) {
    
@@ -288,18 +417,39 @@
         display: flex;
         margin: 0 auto;
         height: 75px;
-        width: 90%;
+        width: 80%;
         align-items: center;
     }
+
     
  
     /* header */
     
     .header-con {
         margin: 0 auto;
-        width: 88.5%;
-        height: 340px;
+        width: 80%;
         background-color: rgb(255,192,23);
+    }
+
+    .trendings-con {
+        padding-top: 40px;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .articles-con {
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .article-text {
+        width: 70%;
+    }
+    
+    .article-image {
+        width: 30%;
+    
     }
     
 
@@ -326,10 +476,123 @@
     
     .header-con {
         margin: 0 auto;
-        width: 88.5%;
-        height: 340px;
+        width: 90%;
         background-color: rgb(255,192,23);
+    }
+
+    .trendings-con {
+        padding-top: 40px;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .articles-con {
+        display: flex;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .article-text {
+        width: 80%;
+    }
+    
+    .article-image {
+        width: 20%;
+    
+    }
+
+    .trend-con {
+        width: 50%;
     }
     
 
+}
+@media screen and (max-width: 760px) {
+    .hide-li {
+        display: none;
+    }
+    .login-window {
+        width: 100%;
+    }
+    .register-window {
+        width: 100%;
+    }
+
+    .trendings-con {
+        padding-top: 40px;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .trend-content h3 {
+        margin: 13px 0 13px 0;
+        font-size: 1.3rem;
+    }
+
+    .trend-number {
+        width: 15%;
+    }    
+
+    .articles-con {
+        display: flex;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .article-text {
+        width: 70%;
+    }
+    
+    .article-image {
+        width: 30%;
+    
+    }
+
+    .trend-con {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 590px) {
+    .header-con-sub {
+        width: 100%;
+    }
+    .sign-in {
+        display: none;
+    }
+
+    .trendings-con {
+        padding-top: 40px;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .trend-content h3 {
+        margin: 13px 0 13px 0;
+        font-size: 1.3rem;
+    }
+
+    .trend-number {
+        width: 15%;
+    }    
+
+    .articles-con {
+        display: flex;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .article-text {
+        width: 60%;
+    }
+    
+    .article-image {
+        width: 40%;
+    
+    }
+
+    .trend-con {
+        width: 100%;
+    }
 }

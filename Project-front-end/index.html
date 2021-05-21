@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Project-front-end/indexStyle.css">
-    <script src="/Project-front-end/index.js" defer></script>
+    <link rel="stylesheet" href="indexStyle.css">
+    <script src="index.js" defer></script>
     <title>Medium</title>
 </head>
 <body>
     <!-- log in -->
-    <div class="login-window">
+    <div class="centering-window">
+        <div class="login-window">
         <div class="exit-window">
             <span id="exitBtn-login" class="x-btn">X</span>
         </div>
@@ -20,23 +21,23 @@
         <form id="login-btn" class="form-container">
             <div class="register-con">
                 <div class="reg-con">
-                    <div for="exampleInputEmail1">Email</div>
-                    <input type="email" aria-describedby="emailHelp">
+                    <input id="signIn-email" placeholder="Email" type="email" aria-describedby="emailHelp">
                 </div>
                 <div class="reg-con">
-                    <div for="exampleInputPassword1" class="form-label">Password</div>
-                    <input type="password">
+                    <input id="signIn-password" placeholder="Password" type="password">
                 </div>
-                <button class="login-btn" type="submit">Log In</button>
+                <button id="sign-in-btn" class="login-btn" type="submit">Log In</button>
                 <div class="create-text">
                     <p>No account?</p>
-                    <p class="create-one">Create one</p>
+                    <p id="sign-up-green" class="create-one">Create one</p>
                 </div>
             </div>
         </form>
     </div>
+    </div>
     <!-- regiter Window -->
-    <div class="register-window">
+    <div class="centering-window">
+        <div class="register-window">
         <div class="exit-window">
             <span id="exitBtn" class="x-btn">X</span>
         </div>
@@ -46,24 +47,22 @@
         <form id="reg-btn" class="form-container">
             <div class="register-con">
                 <div class="reg-con">
-                    <div for="exampleInputEmail1">Email address</div>
-                    <input type="email" aria-describedby="emailHelp">
+                    <input id="sign-up-email" placeholder="Email" type="email" aria-describedby="emailHelp">
                 </div>
                 <div class="reg-con">
-                    <div for="username">User Name</div>
-                    <input type="name" aria-describedby="emailHelp">
+                    <input id="sign-up-username" placeholder="Username" type="name" aria-describedby="emailHelp">
                 </div>
                 <div class="reg-con">
-                    <div for="exampleInputPassword1" class="form-label">Password</div>
-                    <input type="password">
+                    <input id="sign-up-password" type="password" placeholder="Password">
                 </div>
-                <button class="reg-btn" type="submit">Register</button>
+                <button id="sign-up-btn" class="reg-btn" type="submit">Register</button>
                 <div class="create-text">
                     <p>Already have an account?</p>
-                    <p class="create-one">Sign in</p>
+                    <p id="sign-in-green" class="create-one">Sign in</p>
                 </div>
             </div>    
         </form>
+    </div>
     </div>
     <!-- main container -->
     <div class="white-back">
@@ -72,15 +71,15 @@
             <nav class="navBar">
                     <div class="navBar-con">
                         <div class="medium-logo">
-                            <h1 class="medium-word">MEDIUM</h1>
+                            <img src="https://cdn-static-1.medium.com/sites/medium.com/creators/images/Medium-Logo-Black-RGB-1.svg" alt="">
                         </div>
                         <ul class="ul-navBar">
-                            <li class="li-con">Our Story</li>
-                            <li class="li-con">Membership</li>
-                            <li class="li-con">Write</li>
-                            <li id="logIn" class="li-con">Sign In</li>
-                            <div class="getStarted-con">
-                                <li id="getStarted" class="getStarted">Get Started</li>
+                            <li class="li-con hide-li">(not done)</li>
+                            <li class="li-con hide-li">(not done)</li>
+                            <li id="goToWritePage" class="li-con hide-li">Write</li>
+                            <li id="logIn" class="li-con sign-in">Sign In</li>
+                            <div id="getStarted" class="getStarted-con">
+                                <div class="getStarted">Get Started</div>
                             </div>    
                         </ul>
                     </div> 
@@ -90,18 +89,213 @@
                     <div class="empty-div"></div>
                     <!-- header -->
                     <header class="header-con">
-                        <div class="text-con">
-                            <h2>Where good ideas find you</h2>
-                        </div>
-                        <div>
-                            <p>Read and share new perspectives on just about any topic. Everyone’s welcome. Learn more.</p>
-                        </div>
-                        <div>
-                            <div class="getStarted-con-head">
-                                <li class="getStarted-head">Get Started</li>
+                        <div class="header-con-sub">
+                            <div class="text-con">
+                                <h2>Where good ideas find you</h2>
+                            </div>
+                            <div>
+                                <p>Read and share new perspectives on just about any topic. Everyone’s welcome. Learn more.</p>
+                            </div>
+                            <div>
+                                <div id="getStartedHead" class="getStarted-con-head">
+                                    <li class="getStarted-head">Get Started</li>
+                                </div>
                             </div>
                         </div>
                     </header>
+                </div>
+            </div>
+            <div class="third-container">
+                <div class="trendings-con">
+                    <div class="trend-onMedium">
+                        <div class="tend-arrow">
+                            <img src="https://www.freeiconspng.com/uploads/stock-exchange-icon-png-5.png" alt="">
+                        </div>
+                        <span>TRENDING ON MEDIUM</span>
+                    </div>
+                    <div class="top-trends">
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-con">
+                            <div class="trend-number">
+                                <span>01</span>
+                            </div>
+                            <div class="trend-content">
+                                <div class="">
+                                    <img src="https://cdn-images-1.medium.com/max/92/1*nbJ41jD1-r2Oe6FsLjKaOg@2x.png" alt="">
+                                    <span>Minko Gechev in Angular Blog</span>
+                                </div>
+                                <div>
+                                    <h3>Introducing Angular DevTools</h3>
+                                    <span class="time-trend">May 19 ·3 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fourth-container">
+                <div class="articles-con">
+                    <div class="article-zone">
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                        <div class="article-container">
+                            <div class="article-text">
+                                <div>
+                                <img src="https://miro.medium.com/fit/c/20/20/1*8OIW1rabg1zNia0RjTm0KQ.png" alt="">                                    
+                                <span>Sean Kernan in Mind Cafe</span>
+                                </div>
+                                <h3>Four Signs a Person Is Secretly Unhappy with Their Life</h3>
+                                <p>Learn to read a person's contentment and it will improve your relationships and happiness.</p>
+                                <span class="time-trend">Feb 26 · 6 min read</span>
+                            </div>
+                            <div class="article-image">
+                                <img src="https://miro.medium.com/fit/c/200/134/1*T36iyGk8HI3iFINw27SAjQ.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>                    
+                    <!-- <div class="discover-zone"></div> -->
                 </div>
             </div>
         </div>
