@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const multer = require('multer')
 
-
+const articleController = require('../controllers/articleControler')
 const userController = require('../controllers/userController')
 const authenticateMiddleware = require('../middleware/authenticate')
 
@@ -18,6 +18,18 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage
 })
+
+router.route('/article')
+    .post(authenticateMiddleware.authenticate, upload.single('mainArticleImage'), articleController.createArticle)
+    .get(articleController.getArticles)
+router.route('/article/clap')
+    .post(articleController.clapArticle)
+router.route('/myArticles')
+    .get(authenticateMiddleware.authenticate, articleController.getMyArticles)
+router.route('/deleteArticle')
+    .post(authenticateMiddleware.authenticate, articleController.deleteArticle)
+router.route('/getTrendingArticles')
+    .get(articleController.getTrendingArticles)
 
 
 router.route('/user/signUp').post(userController.signUp)

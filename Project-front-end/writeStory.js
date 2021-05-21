@@ -6,6 +6,10 @@ let user;
 document.querySelector('#sign-out').addEventListener('click',() => {
     logOut()
 })
+document.querySelector('#publish-btn').addEventListener('click', (e) => {
+    e.preventDefault()
+    sendArticleToBackEnd()
+})
 
 const profileImgCon = document.querySelector('#profile-img-con')
 const profileImgDropDownMenu = document.querySelector('#profile-img-drop-down')
@@ -46,4 +50,33 @@ const logOut = () => {
     localStorage.removeItem('user')
 
     window.location.href = 'index.html'
+}
+
+const sendArticleToBackEnd = async() => {
+    let mainArticleImage = document.querySelector('#add-title-image')
+    let titleInput = document.querySelector('#title-input').value
+    let contentInput = document.querySelector('#content-input').value
+
+    const formData = new FormData()
+
+    formData.append('mainArticleImage', mainArticleImage.files[0])
+    formData.append('title', titleInput)
+    formData.append('content', contentInput)
+
+    console.log('formData',formData.getAll('title'))
+    console.log('formData',formData.getAll('content'))
+    console.log('formData',formData.getAll('mainArticleImage'))
+    try {
+        let response = await fetch(`${url}/article`, {
+                method: 'POST',
+                headers: {
+                    'projectauth': token
+                },
+                body: formData
+            }
+        )
+        if (response.status != 200) throw await response.json()
+    } catch (e) {
+        console.log(e)
+    }
 }
