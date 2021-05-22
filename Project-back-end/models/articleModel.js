@@ -32,7 +32,7 @@ const articleSchema = new mongoose.Schema({
     toJSON: {
         transform(doc, ret) {
             delete ret.password
-            if (ret.uploadedFile) ret.uploadedFile = 'http://localhost:3000/' + ret.uploadedFile
+            if (ret.mainArticleImage) ret.mainArticleImage = 'http://localhost:3000/' + ret.mainArticleImage
         }
     }
 })

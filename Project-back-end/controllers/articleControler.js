@@ -34,16 +34,24 @@ const getTrendingArticles = async (req, res) => {
     } catch (e) {
         res.status(400).send(e);
     }
-};
+}
+
+const getOneLatestArticle = async (req, res) => {
+    let oneArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(1)
+    res.send(oneArticles)
+}
+const getFourRandomArticles = async (req, res) => {
+    let getFourRandomArticles = await Article.find().populate('userId').limit(4)
+    res.send(getFourRandomArticles)
+}
 
 const createArticle = async (req, res) => {
 
     try {
-        let file = req.file
         const article = new Article({
             title: req.body.title,
             content: req.body.content,
-            mainArticleImage: file.path,
+            mainArticleImage: req.file.path,
             userId: req.user._id,
         })
 
@@ -78,4 +86,6 @@ module.exports = {
     getTrendingArticles,
     getMyArticles,
     deleteArticle,
+    getOneLatestArticle,
+    getFourRandomArticles
 }
