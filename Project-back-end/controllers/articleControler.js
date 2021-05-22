@@ -29,7 +29,7 @@ const clapArticle = async (req, res) => {
 
 const getTrendingArticles = async (req, res) => {
     try {
-        let topArticles = await Article.find().sort({ clapCount: -1 }).limit(6);
+        let topArticles = await Article.find().populate('userId').sort({ clapCount: -1 }).limit(6);
         res.send(topArticles);
     } catch (e) {
         res.status(400).send(e);
@@ -40,7 +40,7 @@ const getOneLatestArticle = async (req, res) => {
     let oneArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(1)
     res.send(oneArticles)
 }
-const getFourRandomArticles = async (req, res) => {
+const getFiveLatestArticles = async (req, res) => {
     let getFourRandomArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(5)
     res.send(getFourRandomArticles)
 }
@@ -87,5 +87,5 @@ module.exports = {
     getMyArticles,
     deleteArticle,
     getOneLatestArticle,
-    getFourRandomArticles
+    getFiveLatestArticles
 }

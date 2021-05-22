@@ -22,16 +22,18 @@ window.addEventListener('DOMContentLoaded', () => {
     setUpNavBar()
     getOneArticle()
     getFourRandomArticles()
+    getTrendingArticles()
+    getAllArticles()
 })
 
-// const getAllArticles = async () => {
-//     let response = await fetch(`${url}/article`, {
-//         method: 'GET'
-//     })
-//
-//     let articles = await response.json()
-//     console.log(articles)
-// }
+const getAllArticles = async () => {
+    let response = await fetch(`${url}/article`, {
+        method: 'GET'
+    })
+
+    let articles = await response.json()
+    showAllArticles(articles)
+}
 
 const getOneArticle = async () => {
     let response = await fetch(`${url}/getOneArticle`, {
@@ -41,6 +43,15 @@ const getOneArticle = async () => {
     let article = await response.json()
     console.log('oneArticle',article)
     showOneLatestArticle(article)
+}
+const getTrendingArticles = async () => {
+    let response = await fetch(`${url}/getTrendingArticles`, {
+        method: 'GET'
+    })
+
+    let articles = await response.json()
+    console.log('6 trending articles',articles)
+    showSixTrendingArticles(articles)
 }
 
 const getFourRandomArticles = async () => {
@@ -93,7 +104,7 @@ const showFourRandomArticles = (articles) => {
                                 </h2>
                             </div>
                             <div class="read-time-con mt-8">
-                                <a href="">${article.createdAt.slice(2,10)}</a>
+                                <span>${article.createdAt.slice(2,10)}</span>
                                 <span class="dot-between">.</span>
                                 <span>${calcReadTime(article.content.length)}</span>
                                 <i class="fas fa-sun"></i>
@@ -103,6 +114,48 @@ const showFourRandomArticles = (articles) => {
                     </div>`
         let articleContainer = document.getElementById('fourRandomArticles')
         articleContainer.innerHTML += fourRandomArticles
+    }
+}
+
+const showSixTrendingArticles = (articles) => {
+    for (let article of articles) {
+        let sixTrendingArticles = `<div class="trend-con">
+                    <div class="trend-number">
+                        <span>${articles.indexOf(article) + 1}</span>
+                    </div>
+                    <div class="trend-content">
+                        <div class="d-flex align-center">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
+                        </div>
+                        <div>
+                            <h3>${article.title}</h3>
+                            <span class="time-trend">${article.createdAt.slice(2,10)} · ${calcReadTime(article.content.length)}</span>
+                        </div>
+                    </div>
+                </div>`
+        let articleContainer = document.getElementById('top-trends')
+        articleContainer.innerHTML += sixTrendingArticles
+    }
+}
+const showAllArticles = (articles) => {
+    for (let article of articles) {
+        let allArticles = `<div class="article-container">
+                    <div class="article-text">
+                        <div class="d-flex align-center">
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
+                        </div>
+                        <h3>${article.title}</h3>
+                        <p>${renderLimitedContent(article.content)}</p>
+                        <span class="time-trend">${article.createdAt.slice(2,10)} · ${calcReadTime(article.content.length)}</span>
+                    </div>
+                    <div class="article-image">
+                        <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                    </div>
+                </div>`
+        let articleContainer = document.getElementById('all-article-zone')
+        articleContainer.innerHTML += allArticles
     }
 }
 

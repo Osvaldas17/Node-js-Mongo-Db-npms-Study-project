@@ -592,7 +592,6 @@
     
     }
 
-<<<<<<< HEAD
 }
 @media screen and (max-width: 760px) {
     .hide-li {
@@ -613,9 +612,7 @@
     .sign-in {
         display: none;
     }
-=======
     .trend-con {
         width: 100%;
     }
->>>>>>> Vilmanto
 }
