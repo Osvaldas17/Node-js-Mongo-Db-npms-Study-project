@@ -49,8 +49,8 @@ const getFourRandomArticles = async () => {
     })
 
     let articles = await response.json()
-    console.log('fourArticles',articles)
-    showFourRandomArticles(articles)
+    console.log('fourLatestArticles',articles)
+    showFourRandomArticles(articles.slice(1))
 }
 
 const showOneLatestArticle = (articles) => {

@@ -41,7 +41,7 @@ const getOneLatestArticle = async (req, res) => {
     res.send(oneArticles)
 }
 const getFourRandomArticles = async (req, res) => {
-    let getFourRandomArticles = await Article.find().populate('userId').limit(4)
+    let getFourRandomArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(5)
     res.send(getFourRandomArticles)
 }
 
