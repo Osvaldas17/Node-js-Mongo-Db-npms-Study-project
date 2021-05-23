@@ -81,7 +81,7 @@ const showOneLatestArticle = (articles) => {
                     </div>
                     <div class="read-time-con mt-16">
                         <a href="">Read more</a>
-                        <span class="dot-between">.</span>
+                        <span class="dot-between">·</span>
                         <span>${calcReadTime(article.content.length)}</span>
                         <i class="fas fa-sun"></i>
                     </div>`
@@ -105,7 +105,7 @@ const showFourRandomArticles = (articles) => {
                             </div>
                             <div class="read-time-con mt-8">
                                 <span>${article.createdAt.slice(2,10)}</span>
-                                <span class="dot-between">.</span>
+                                <span class="dot-between">·</span>
                                 <span>${calcReadTime(article.content.length)}</span>
                                 <i class="fas fa-sun"></i>
                             </div>

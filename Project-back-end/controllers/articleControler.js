@@ -77,7 +77,9 @@ const getMyArticles = async (req, res) => {
         userId: req.user._id
     }).populate('userId')
     res.send(articles)
+    console.log(articles)
 }
+
 
 module.exports = {
     getArticles,

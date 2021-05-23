@@ -5,6 +5,10 @@
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+
+/* header */
+
+
 .content-wrapper {
     width: 80%;
     margin: 0 64px;
@@ -135,6 +139,7 @@ header {
 .d-block {
     display: block;
 }
+
 /* main content */
 
 .main-wrapper {
