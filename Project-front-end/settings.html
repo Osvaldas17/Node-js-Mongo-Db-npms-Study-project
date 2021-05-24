@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Log in</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="settings.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="settings.js" defer></script>
@@ -13,7 +13,7 @@
         <div class="content-wrapper">
           <div class="nav-bar">
             <div class="nav-logo-con">
-              <a href="">
+              <a href="loggedInMainPage.html">
                 <img
                   src="https://cdn-static-1.medium.com/sites/medium.com/creators/images/Medium-Logo-Black-RGB-1.svg"
                   alt=""
@@ -74,12 +74,12 @@
           </li>
           <li class="li-p">
             <div>
-              <a class="drop-down-a color-grey" href="">Write a story</a>
+              <a class="drop-down-a color-grey" href="writeStory.html">Write a story</a>
             </div>
           </li>
           <li class="li-p">
             <div>
-              <a class="drop-down-a color-grey" href="">Stories</a>
+              <a class="drop-down-a color-grey" href="userStories.html">Stories</a>
             </div>
           </li>
           <li class="li-p">
@@ -94,7 +94,7 @@
           </li>
           <li class="li-p">
             <div>
-              <a class="drop-down-a color-grey" href="">Settings</a>
+              <a class="drop-down-a color-grey" href="settings.html">Settings</a>
             </div>
           </li>
           <li class="separator">
@@ -179,105 +179,7 @@
           <a href="#">About</a>
         </div>
       </div>
-      <div class="main">
-        <h2 class="heading">About you</h2>
-
-        <section class="name">
-          <h3>Name</h3>
-          <div class="flex">
-            <p class="name-surname">Name Surname</p>
-            <div class="edit-btn light">Edit</div>
-          </div>
-          
-          <p class="note">
-            Your name appears on your Profile page, as your byline, and in your
-            responses. It is a required field.
-          </p>
-        </section>
-
-        <section class="name">
-          <h3>Bio</h3>
-          <div class="flex">
-            <p class="">Add your bio</p>
-            <div class="edit-btn light">Edit</div>
-          </div>
-          <p class="note">
-            Your bio appears on your Profile and next to your stories. Max 160
-            characters.
-          </p>
-        </section>
-
-        <section class="name">
-          <h3>Photo</h3>
-          <div class="flex">
-            <p class="">Photo</p>
-            <div class="edit-btn light">Edit</div>
-          </div>
-          <div class="flex-two">
-            <p class="note">
-              Your photo appears on your Profile page and with your stories
-              across Medium.<br /><br />
-              Recommended size: Square, at least 1000 pixels per side. File
-              type: JPG, PNG or GIF.
-            </p>
-            <img src="profile.png" alt="Profile picture" class="profile-pic" />
-          </div>
-        </section>
-        <section class="name">
-          <div class="flex">
-            <h3>Username & URL</h3>
-            <div class="edit-btn light">Edit</div>
-          </div>
-          <div class="flex-two">
-            <div>
-              <p class="bold margin-btm">Username</p>
-              <p class="bold">Profile URL</p>
-            </div>
-            <div class="margin-lft">
-              <p class="regular username margin-btm">mynickname</p>
-              <p class="regular url">myurl</p>
-            </div>
-          </div>
-        </section>
-        <section class="name">
-          <div class="flex">
-            <h3>Custom domain</h3>
-            <div class="upgrade-btn light">Upgrade</div>
-          </div>
-          <p class="note">
-            Upgrade your account to point a custom domain, like yourdomain.com
-            or blog.yourdomain.com, to your profile.
-          </p>
-        </section>
-        <section class="name">
-            <div class="flex">
-              <h3>Email settings</h3>
-              <div class="edit-btn light">Edit</div>
-            </div>
-            <p class="bold margin-btm">Your email</p>
-            <p class="regular">email@email.com</p>
-            </p>
-          </section>
-            <section class="name">
-            <div class="flex">
-              <h3>Security</h3>
-              
-            </div>
-            <div class="flex-three">
-            <p class="bold margin-btm">Sign out of all other sessions</p>
-            <div class="signout-btn light">Sign Out</div>
-        </div>
-            <p class="regular">email@email.com</p>
-            </p>
-          </section>
-          <section class="name">
-            <div class="flex">
-              <h3>Delete account</h3>
-              <div class="upgrade-btn light">Delete</div>
-            </div>
-            <p class="regular margin-btm">Permanently delete your account and all of your content.</p>
-     
-          </section>
+      <div id="user-info-container" class="main">
       </div>
     </main>
   </body>

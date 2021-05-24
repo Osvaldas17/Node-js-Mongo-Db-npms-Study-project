@@ -162,8 +162,15 @@ header {
     align-items: center;
 }
 .user-img-under-article {
+    height: 23px;
+    width: 23px;
     max-height: 100%;
     border-radius: 50%;
+}
+.article-user-image {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
 }
 .user-text-under-article {
     font-size: 13px;

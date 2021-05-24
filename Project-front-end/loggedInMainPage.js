@@ -95,7 +95,7 @@ const showFourRandomArticles = (articles) => {
         let fourRandomArticles = `<div class="small-article-con">
                         <div class="flex-grow-1 small-article-sub-con">
                             <div class="user-info-under-article">
-                                <img class="user-img-under-article" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                                <img class="user-img-under-article" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                                 <p class="user-text-under-article">${article.userId ? article.userId.userName : 'anonymous'}</p>
                             </div>
                             <div>
@@ -125,7 +125,7 @@ const showSixTrendingArticles = (articles) => {
                     </div>
                     <div class="trend-content">
                         <div class="d-flex align-center">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            <img class="article-user-image" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
                         <div>
@@ -143,7 +143,7 @@ const showAllArticles = (articles) => {
         let allArticles = `<div class="article-container">
                     <div class="article-text">
                         <div class="d-flex align-center">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            <img class="article-user-image" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
                         <h3>${article.title}</h3>

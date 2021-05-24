@@ -210,6 +210,11 @@ header {
 .article-text span {
     font-size: 13px;
 }
+.article-user-image {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
 
 .article-text h3 {
     font-size: 22px;

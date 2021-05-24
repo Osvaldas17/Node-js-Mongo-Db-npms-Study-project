@@ -72,7 +72,7 @@ const showMyArticles = (articles) => {
         let myArticles = `<div class="article-container">
                     <div class="article-text">
                         <div class="d-flex align-center">
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            <img class="article-user-image" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
                         <h3>${article.title}</h3>
