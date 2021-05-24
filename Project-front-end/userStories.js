@@ -75,12 +75,16 @@ const showMyArticles = (articles) => {
                             <img class="article-user-image" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
-                        <h3>${article.title}</h3>
-                        <p>${renderLimitedContent(article.content)}</p>
+                        <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                            <h3>${article.title}</h3>
+                            <p>${renderLimitedContent(article.content)}</p>
+                        </a>
                         <span class="time-trend">${article.createdAt.slice(2,10)} · ${calcReadTime(article.content.length)} · <span onclick="window.location.reload(); removeArticle(this,'${article._id}')" class="remove-article-btn">Remove article</span></span>
                     </div>
                     <div class="article-image">
-                        <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                        <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                            <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                        </a>
                     </div>
                 </div>`
         let articleContainer = document.getElementById('your-stories')

@@ -8,7 +8,7 @@ const getArticles = async (req, res) => {
 const clapArticle = async (req, res) => {
     try {
         if (!req.body._id) throw {
-            message: 'Provide tweet id'
+            message: 'Provide article id'
         }
         let article = await Article.findOneAndUpdate({
             _id: req.body._id
@@ -20,6 +20,19 @@ const clapArticle = async (req, res) => {
             new: true
         })
 
+        res.send(article)
+
+    } catch (e) {
+        res.status(400).send(e)
+    }
+}
+
+const getSelectedArticle = async (req, res) => {
+    console.log(req.body)
+    try {
+        let article = await Article.findOne({
+            _id: req.body.id
+        }).populate('userId')
         res.send(article)
 
     } catch (e) {
@@ -89,5 +102,6 @@ module.exports = {
     getMyArticles,
     deleteArticle,
     getOneLatestArticle,
-    getFiveLatestArticles
+    getFiveLatestArticles,
+    getSelectedArticle
 }

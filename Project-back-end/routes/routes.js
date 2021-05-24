@@ -34,6 +34,8 @@ router.route('/deleteArticle')
     .post(authenticateMiddleware.authenticate, articleController.deleteArticle)
 router.route('/getTrendingArticles')
     .get(articleController.getTrendingArticles)
+router.route('/getSelectedArticle')
+    .post(articleController.getSelectedArticle)
 
 
 router.route('/user/signUp').post(userController.signUp)

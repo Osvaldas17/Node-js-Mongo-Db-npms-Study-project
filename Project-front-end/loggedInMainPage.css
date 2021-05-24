@@ -8,6 +8,10 @@
 
 /* header */
 
+.href-reset {
+    text-decoration: none;
+    color: black;
+}
 
 .content-wrapper {
     width: 80%;
@@ -394,13 +398,18 @@ header {
     padding: 4px 0 11px 0;
     color: rgb(95, 95, 95);
 }
+@media screen and (max-width: 1500px) {
+    .width-50 {
+        width: 50%;
+    }
+    .empty-content {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 1100px) {
     .articles-con {
         flex-wrap: wrap;
-    }
-    .width-50 {
-        width: 50%;
     }
     .width-100 {
         width: 100%;

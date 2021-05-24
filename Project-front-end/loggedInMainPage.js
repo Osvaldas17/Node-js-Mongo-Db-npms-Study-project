@@ -66,19 +66,21 @@ const getFourRandomArticles = async () => {
 
 const showOneLatestArticle = (articles) => {
     for (let article of articles) {
-        let oneLatestArticle = `<a href="">
+        let oneLatestArticle = `<a href="selectedArticle.html?id=${article._id}">
                         <img class="main-article-image" src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
                     </a>
                     <div class="user-info-under-article mt-16">
                         <img class="user-img-under-article" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                         <p class="user-text-under-article">${article.userId ? article.userId.userName : 'anonymous'}</p>
                     </div>
-                    <div>
-                        <h2 class="main-article-h2">${article.title}</h2>
-                    </div>
-                    <div>
-                        <p class="main-article-text">${renderLimitedContent(article.content)}</p>
-                    </div>
+                    <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                        <div>
+                            <h2 class="main-article-h2">${article.title}</h2>
+                        </div>
+                        <div>
+                            <p class="main-article-text">${renderLimitedContent(article.content)}</p>
+                        </div>
+                    </a>
                     <div class="read-time-con mt-16">
                         <a href="">Read more</a>
                         <span class="dot-between">·</span>
@@ -99,9 +101,11 @@ const showFourRandomArticles = (articles) => {
                                 <p class="user-text-under-article">${article.userId ? article.userId.userName : 'anonymous'}</p>
                             </div>
                             <div>
-                                <h2 class="small-article-h2">
-                                    ${article.title}
-                                </h2>
+                                <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                                    <h2 class="small-article-h2">
+                                        ${article.title}
+                                    </h2>
+                                </a>
                             </div>
                             <div class="read-time-con mt-8">
                                 <span>${article.createdAt.slice(2,10)}</span>
@@ -110,8 +114,10 @@ const showFourRandomArticles = (articles) => {
                                 <i class="fas fa-sun"></i>
                             </div>
                         </div>
-                        <img class="small-article-img" src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
-                    </div>`
+                            <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                                <img class="small-article-img" src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                            </a>    
+                        </div>`
         let articleContainer = document.getElementById('fourRandomArticles')
         articleContainer.innerHTML += fourRandomArticles
     }
@@ -129,7 +135,9 @@ const showSixTrendingArticles = (articles) => {
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
                         <div>
-                            <h3>${article.title}</h3>
+                            <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                                <h3>${article.title}</h3>
+                            </a> 
                             <span class="time-trend">${article.createdAt.slice(2,10)} · ${calcReadTime(article.content.length)}</span>
                         </div>
                     </div>
@@ -146,12 +154,16 @@ const showAllArticles = (articles) => {
                             <img class="article-user-image" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
                             <span class="m-l-8">${article.userId ? article.userId.userName : 'anonymous'}</span>
                         </div>
-                        <h3>${article.title}</h3>
-                        <p>${renderLimitedContent(article.content)}</p>
+                        <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                            <h3>${article.title}</h3>
+                            <p>${renderLimitedContent(article.content)}</p>
+                        </a>
                         <span class="time-trend">${article.createdAt.slice(2,10)} · ${calcReadTime(article.content.length)}</span>
                     </div>
                     <div class="article-image">
-                        <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                        <a class="href-reset" href="selectedArticle.html?id=${article._id}">
+                            <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                        </a>    
                     </div>
                 </div>`
         let articleContainer = document.getElementById('all-article-zone')
