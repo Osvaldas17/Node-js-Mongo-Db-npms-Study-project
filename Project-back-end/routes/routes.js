@@ -36,6 +36,12 @@ router.route('/getTrendingArticles')
     .get(articleController.getTrendingArticles)
 router.route('/getSelectedArticle')
     .post(articleController.getSelectedArticle)
+router.route('/removeFromBookmark')
+    .post(authenticateMiddleware.authenticate, articleController.removeFromBookmark)
+router.route('/bookmarkArticle')
+    .post(authenticateMiddleware.authenticate, articleController.bookmarkArticle)
+router.route('/getBookmarkedArticles')
+    .get(authenticateMiddleware.authenticate, articleController.getBookmarkedArticles)
 
 
 router.route('/user/signUp').post(userController.signUp)

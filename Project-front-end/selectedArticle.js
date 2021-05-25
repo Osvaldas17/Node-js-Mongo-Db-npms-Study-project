@@ -106,7 +106,7 @@ const renderArticle = (article) => {
                     </div>
                 </div>
                 <div class="bookmark">
-                    <i class="far fa-bookmark"></i>
+                    <i onclick="${bookmarkArticle(article._id)}" class="far fa-bookmark bookmark-btn"></i>
                 </div>
             </div>
             <div>
@@ -118,4 +118,18 @@ const renderArticle = (article) => {
         </div>`
     let articleContainer = document.querySelector('#article-render-place')
     articleContainer.innerHTML += singleArticle
+}
+
+const bookmarkArticle = (id) => {
+    let body = {
+        _id: id
+    }
+    fetch(`${url}/bookmarkArticle`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'projectauth': token
+        },
+        body: JSON.stringify(body)
+    })
 }

@@ -5,7 +5,6 @@ const Session = require('../models/sessionModel')
 const authenticate = async (req, res, next) => {
     try {
         let token = req.headers['projectauth']
-        console.log('token',token)
         let decoded = jwt.verify(token, process.env.JWT_PASSWORD)
         let session = await Session.findOne({
             sessionToken: token

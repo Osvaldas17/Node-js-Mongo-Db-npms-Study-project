@@ -28,7 +28,6 @@ const clapArticle = async (req, res) => {
 }
 
 const getSelectedArticle = async (req, res) => {
-    console.log(req.body)
     try {
         let article = await Article.findOne({
             _id: req.body.id
@@ -68,14 +67,12 @@ const createArticle = async (req, res) => {
             userId: req.user._id,
         })
 
-        console.log(article)
 
         let savedArticle = await article.save()
         res.send(savedArticle)
 
     } catch (e) {
         res.status(400).send(e)
-        console.log(e)
     }
 }
 const deleteArticle = async (req, res) => {
@@ -85,14 +82,60 @@ const deleteArticle = async (req, res) => {
     res.send(Article)
 }
 
+const bookmarkArticle = async (req, res) => {
+    try {
+        if (!req.body._id) throw {
+            message: 'Provide article id'
+        }
+        let article = await Article.findOneAndUpdate({
+            _id: req.body._id
+        }, {
+            bookmarked: true
+
+        }, {
+            new: true
+        })
+
+        res.send(article)
+
+    } catch (e) {
+        res.status(400).send(e)
+    }
+}
+const removeFromBookmark = async (req, res) => {
+    try {
+        if (!req.body._id) throw {
+            message: 'Provide article id'
+        }
+        let article = await Article.findOneAndUpdate({
+            _id: req.body._id
+        }, {
+            bookmarked: false
+
+        }, {
+            new: true
+        })
+
+        res.send(article)
+
+    } catch (e) {
+        res.status(400).send(e)
+    }
+}
+
+const getBookmarkedArticles = async (req, res) => {
+    let articles = await Article.find({
+        bookmarked: true
+    }).populate('userId')
+    res.send(articles)
+}
+
 const getMyArticles = async (req, res) => {
     let articles = await Article.find({
         userId: req.user._id
     }).populate('userId')
     res.send(articles)
-    console.log(articles)
 }
-
 
 module.exports = {
     getArticles,
@@ -103,5 +146,8 @@ module.exports = {
     deleteArticle,
     getOneLatestArticle,
     getFiveLatestArticles,
-    getSelectedArticle
+    getSelectedArticle,
+    bookmarkArticle,
+    getBookmarkedArticles,
+    removeFromBookmark
 }
