@@ -213,3 +213,107 @@ footer {
     color: black;
     transform: scale(1);
 }
+
+/* clap and comment */
+
+.clap-image {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.clap-image:active {
+    width: 22px;
+    height: 22px;
+}
+.h-30px {
+    height: 30px;
+}
+
+.claps-count {
+    width: 25px;
+    height: 25px;
+}
+
+/* comment */
+
+.comment-input {
+    height: 80px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 8px;
+    border: rgb(255, 255, 255) solid 1px;
+    background-color:  rgb(250,250,250);
+    outline: none;
+}
+.comment-button {
+    font-size: 14px;
+    padding: 6px 12px 8px;
+    border: 1px solid rgb(117,117,117);
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+.comment-button:hover {
+    border: 1px solid black;
+}
+
+.comment-input:active {
+    border: white 1px solid;
+}
+
+.comments-con {
+    margin: 50px 0 100px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+textarea {
+    resize: none;
+}
+
+.comment-window {
+    margin: 20px 0 20px;
+    border-bottom: 1px solid rgb(196,196,196);
+}
+
+.comment-user {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin: 10px 10px 10px 15px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.comment-content {
+    width: 100%;
+    padding: 20px;
+}
+
+.profile-pic{
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+.comment-profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.comment-date {
+    margin-left: 10px;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(117, 117, 117, 1);
+}
+
+.all-comment-content {
+    background-color: rgb(250,250,250);
+}

@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setUpNavBar()
     getSelectedArticle()
+    getArticleComments()
 })
 
 const setUpNavBar = () => {
@@ -110,10 +111,16 @@ const renderArticle = (article) => {
             <div class="article-text">
                 <p>${article.content}</p>
             </div>
+            <div class="h-30px">
+                <img class="clap-image" src="http://cdn.onlinewebfonts.com/svg/img_484121.png" onclick='clap(this, "${article._id}")' alt="">
+                <span class="claps-count">${article.clapCount}</span>
+            </div>
         </div>`
+
     let articleContainer = document.querySelector('#article-render-place')
     articleContainer.innerHTML += singleArticle
 }
+
 
 const bookmarkArticle = (id) => {
     let body = {
@@ -127,5 +134,116 @@ const bookmarkArticle = (id) => {
         },
         body: JSON.stringify(body)
     })
+}
+
+//////////////////
+
+const clap = async (el, id) => {
+
+
+    let count = el.nextElementSibling.innerHTML
+
+    el.nextElementSibling.innerHTML = parseInt(count) + 1
+
+    let body = {
+        clapId: id
+    }
+
+    fetch(`${url}/article/clap`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'projectauth': token
+        },
+        body: JSON.stringify(body)
+    })
+}
+
+const getArticleComments = async () => {
+    const url_string2 = window.location.href;
+    const url22 = new URL(url_string2);
+    const id2 = url22.searchParams.get("id")
+
+    let body = {
+        id2
+    }
+
+    try {
+        let response = await fetch(`${url}/articleComments`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        })
+        let articleComments = await response.json()
+
+        showComments(articleComments)
+        console.log('comments', articleComments)
+        if (response.status != 200) throw await response.json()
+        } catch (e) {
+        console.log(e)
+}
+}
+
+document.querySelector('#comment-btn').addEventListener('click',() => {
+    sendCommentToBackEnd()
+    let path = window.location.href
+    window.location.href = path
+})
+
+const sendCommentToBackEnd = async() => {
+
+
+    const commentInput = document.querySelector('#commentInput').value
+
+    if (commentInput.trim() !== '') {
+        const url_string1 = window.location.href;
+        const url11 = new URL(url_string1);
+        const id1 = url11.searchParams.get("id")
+
+        let body = {
+            commentInput,
+            id1
+        }
+        console.log(body)
+
+        try {
+            let response = await fetch(`${url}/comment`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'projectauth': token
+                    },
+                    body: JSON.stringify(body)
+                }
+            )
+            if (response.status != 200) throw await response.json()
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    else {
+        alert('field is empty')
+    }
+}
+
+const showComments = (comments) => {
+    for (let comment of comments) {
+        let commentRender = `<div class="comment-window">
+                    <div class="comment-profile-info">
+                        <img class="profile-pic" src="${comment.userId && comment.userId.profileImage ? comment.userId.profileImage : "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"}" alt="">
+                        <div class="comment-user">
+                            <span>${comment.userId.userName}</span>
+                            <span class="comment-date">${comment.createdAtComment.slice(0, 10)}</span>
+                        </div>
+                    </div>
+                        <p class="comment-content">${comment.commentContent}</p>
+                </div>`
+
+        let commentSpace = document.querySelector('#comment-space')
+        commentSpace.innerHTML += commentRender
+
+    }
 }
 

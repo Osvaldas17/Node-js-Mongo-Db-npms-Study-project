@@ -8,11 +8,11 @@ const getArticles = async (req, res) => {
 
 const clapArticle = async (req, res) => {
     try {
-        if (!req.body._id) throw {
+        if (!req.body.clapId) throw {
             message: 'Provide article id'
         }
         let article = await Article.findOneAndUpdate({
-            _id: req.body._id
+            _id: req.body.clapId
         }, {
             $inc: {
                 clapCount: 1
