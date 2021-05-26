@@ -1,8 +1,5 @@
 const Article = require('../models/articleModel')
-<<<<<<< HEAD
 const sharp = require('sharp')
-=======
->>>>>>> Vilmanto
 
 const getArticles = async (req, res) => {
     let allArticles = await Article.find().populate('userId')
@@ -11,19 +8,11 @@ const getArticles = async (req, res) => {
 
 const clapArticle = async (req, res) => {
     try {
-<<<<<<< HEAD
         if (!req.body._id) throw {
             message: 'Provide article id'
         }
         let article = await Article.findOneAndUpdate({
             _id: req.body._id
-=======
-        if (!req.body.clapId) throw {
-            message: 'Provide article id'
-        }
-        let article = await Article.findOneAndUpdate({
-            _id: req.body.clapId
->>>>>>> Vilmanto
         }, {
             $inc: {
                 clapCount: 1
@@ -40,10 +29,6 @@ const clapArticle = async (req, res) => {
 }
 
 const getSelectedArticle = async (req, res) => {
-<<<<<<< HEAD
-=======
-    console.log(req.body)
->>>>>>> Vilmanto
     try {
         let article = await Article.findOne({
             _id: req.body.id
@@ -73,7 +58,6 @@ const getFiveLatestArticles = async (req, res) => {
     res.send(getFourRandomArticles)
 }
 
-<<<<<<< HEAD
 
 const createArticle = async (req, res) => {
     let path1 = "uploads/"+"resided-1-" + Date.now() + ".jpg"
@@ -92,41 +76,22 @@ const createArticle = async (req, res) => {
 
     try {
 
-=======
-const createArticle = async (req, res) => {
-
-    try {
->>>>>>> Vilmanto
         const article = new Article({
             title: req.body.title,
             content: req.body.content,
             mainArticleImage: req.file.path,
             userId: req.user._id,
-<<<<<<< HEAD
             thumbnailSm: path,
             thumbnailMed: path1
         })
 
-=======
-        })
-
-        console.log(article)
-
->>>>>>> Vilmanto
         let savedArticle = await article.save()
         res.send(savedArticle)
 
     } catch (e) {
         res.status(400).send(e)
-<<<<<<< HEAD
     }
 }
-=======
-        console.log(e)
-    }
-}
-
->>>>>>> Vilmanto
 const deleteArticle = async (req, res) => {
     Article.deleteOne({ _id: req.body._id }, function (err) {
         if (err) throw (err);
@@ -134,7 +99,6 @@ const deleteArticle = async (req, res) => {
     res.send(Article)
 }
 
-<<<<<<< HEAD
 const bookmarkArticle = async (req, res) => {
     try {
         if (!req.body._id) throw {
@@ -183,22 +147,13 @@ const getBookmarkedArticles = async (req, res) => {
     res.send(articles)
 }
 
-=======
->>>>>>> Vilmanto
 const getMyArticles = async (req, res) => {
     let articles = await Article.find({
         userId: req.user._id
     }).populate('userId')
     res.send(articles)
-<<<<<<< HEAD
 }
 
-=======
-    console.log(articles)
-}
-
-
->>>>>>> Vilmanto
 module.exports = {
     getArticles,
     createArticle,
@@ -209,10 +164,7 @@ module.exports = {
     getOneLatestArticle,
     getFiveLatestArticles,
     getSelectedArticle,
-<<<<<<< HEAD
     bookmarkArticle,
     getBookmarkedArticles,
     removeFromBookmark
-=======
->>>>>>> Vilmanto
 }
