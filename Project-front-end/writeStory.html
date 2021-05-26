@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write a story</title>
+    <link rel="stylesheet" href="writeStory.css">
+    <script src="writeStory.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <div class="nav-container">
+            <div class="content-wrapper">
+                <div class="nav-bar">
+                    <div class="nav-logo-con">
+                        <a href="loggedInMainPage.html">
+                            <img src="https://cdn-static-1.medium.com/sites/medium.com/creators/images/Medium-Logo-Black-RGB-1.svg" style="height: 32px" alt="">
+                        </a>
+                    </div>
+                    <div class="nav-bar-right-side">
+                        <div class="publish-btn-con ">
+                            <a href="" class="a-ref-default-remove">
+                                <div id="publish-btn" class="publish-btn">Publish</div>
+                            </a>
+                        </div>
+                        <div id="profile-img-con" class="profile-img-con">
+                            <img id="navProfileImage" class="profile-img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div id="profile-img-drop-down" class="profile-img-drop-down">
+            <ul class="ul-style">
+                <li class="li-p ">
+                    <div class="drop-down-profile-window">
+                        <a href="">
+                            <img id="ProfileImage" class="profile-img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                        </a>
+                        <div class="user-information-window">
+                            <a href="" class="black drop-down-a">
+                                <span id="userName">username</span>
+                            </a>
+                            <a href="" class="drop-down-a color-grey">
+                                <span id="userEmail">email</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="separator">
+                    <div class="separator-line"></div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Write a story</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="userStories.html">Stories</a>
+                    </div>
+                </li>
+                <li class="li-p">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Stats</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Design your profile</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="settings.html">Settings</a>
+                    </div>
+                </li>
+                <li class="separator">
+                    <div class="separator-line"></div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="bookmarked.html">Reading list</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Publications</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Control your recommendations</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Medium partner program</a>
+                    </div>
+                </li>
+                <li class="separator">
+                    <div class="separator-line"></div>
+                </li>
+                <li class="li-p">
+                    <div>
+                        <a class="green drop-down-a" href="">Become a member</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a class="drop-down-a color-grey" href="">Help</a>
+                    </div>
+                </li>
+                <li class="li-p ">
+                    <div>
+                        <a id="sign-out" class="drop-down-a color-grey" href="">Sign out</a>
+                    </div>
+                </li>
+                <li class="separator">
+                    <div class="separator-line"></div>
+                </li>
+                <li class="li-p ">
+                    <a class="drop-down-a color-grey" href="">
+                        <span>privacy</span>
+                    </a>
+                    <a class="drop-down-a color-grey" href="">
+                        <span>terms</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+</header>
+<main>
+    <div class="write-story-wrapper">
+        <div class="p-20">
+            <div class="dd">
+                <div class="add-image-con">
+                    <label for="add-title-image">
+                        <i id="add-title-image-icon" class="fas fa-plus"></i>
+                        <input type="file" id="add-title-image" style="display: none">
+                    </label>
+                </div>
+                <div class="flex-grow-1">
+                    <input id="title-input" class="title-input" type="text" placeholder="Title" maxlength = "100">
+                </div>
+            </div>
+            <div class="dd">
+                <div style="width: 34.5px"></div>
+                <div class="flex-grow-1">
+                    <textarea id="content-input" class="content-input" name="Text1" cols="40" rows="5" placeholder="Tell your story..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
