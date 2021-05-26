@@ -111,7 +111,7 @@ const showBookmarkedArticles = (articles) => {
                     </div>
                     <div class="article-image">
                         <a class="href-reset" href="selectedArticle.html?id=${article._id}">
-                            <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                            <img src="${article.thumbnailSm ? article.thumbnailSm : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
                         </a>
                     </div>
                 </div>`
@@ -119,4 +119,5 @@ const showBookmarkedArticles = (articles) => {
         articleContainer.innerHTML += myArticles
     }
 }
+
 

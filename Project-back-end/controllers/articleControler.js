@@ -1,4 +1,5 @@
 const Article = require('../models/articleModel')
+const sharp = require('sharp')
 
 const getArticles = async (req, res) => {
     let allArticles = await Article.find().populate('userId')
@@ -57,16 +58,32 @@ const getFiveLatestArticles = async (req, res) => {
     res.send(getFourRandomArticles)
 }
 
+
 const createArticle = async (req, res) => {
+    let path1 = "uploads/"+"resided-1-" + Date.now() + ".jpg"
+    let path = "uploads/"+"resized-0-" + Date.now() + ".jpg"
+    await sharp(req.file.path)
+        .resize(200,158)
+        .jpeg({quality: 50})
+        .toFile(path)
+
+    await sharp(req.file.path)
+        .resize(600)
+        .jpeg({quality: 50})
+        .toFile(path1)
+
+    console.log('path',path)
 
     try {
+
         const article = new Article({
             title: req.body.title,
             content: req.body.content,
             mainArticleImage: req.file.path,
             userId: req.user._id,
+            thumbnailSm: path,
+            thumbnailMed: path1
         })
-
 
         let savedArticle = await article.save()
         res.send(savedArticle)

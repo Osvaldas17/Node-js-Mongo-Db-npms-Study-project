@@ -11,6 +11,12 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    thumbnailSm: {
+        type: String,
+    },
+    thumbnailMed: {
+        type: String,
+    },
     mainArticleImage: {
         type: String,
         required: true
@@ -37,6 +43,8 @@ const articleSchema = new mongoose.Schema({
         transform(doc, ret) {
             delete ret.password
             if (ret.mainArticleImage) ret.mainArticleImage = 'http://localhost:3000/' + ret.mainArticleImage
+            if (ret.thumbnailSm) ret.thumbnailSm = 'http://localhost:3000/' + ret.thumbnailSm
+            if (ret.thumbnailMed) ret.thumbnailMed = 'http://localhost:3000/' + ret.thumbnailMed
         }
     }
 })

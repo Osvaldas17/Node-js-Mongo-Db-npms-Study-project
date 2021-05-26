@@ -20,7 +20,7 @@ const upload = multer({
 })
 
 router.route('/article')
-    .post(authenticateMiddleware.authenticate, upload.single('mainArticleImage'), articleController.createArticle)
+    .post(authenticateMiddleware.authenticate, upload.single('mainArticleImage'),articleController.createArticle)
     .get(articleController.getArticles)
 router.route('/getOneArticle')
     .get(articleController.getOneLatestArticle)

@@ -67,7 +67,7 @@ const getFourRandomArticles = async () => {
 const showOneLatestArticle = (articles) => {
     for (let article of articles) {
         let oneLatestArticle = `<a href="selectedArticle.html?id=${article._id}">
-                        <img class="main-article-image" src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                        <img class="main-article-image" src="${article.thumbnailMed ? article.thumbnailMed : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Black_photo.jpg/450px-Black_photo.jpg"}" alt="">
                     </a>
                     <div class="user-info-under-article mt-16">
                         <img class="user-img-under-article" src="${article.userId && article.userId.profileImage ? article.userId.profileImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}" alt="">
@@ -115,7 +115,7 @@ const showFourRandomArticles = (articles) => {
                             </div>
                         </div>
                             <a class="href-reset" href="selectedArticle.html?id=${article._id}">
-                                <img class="small-article-img" src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                                <img class="small-article-img" src="${article.thumbnailSm ? article.thumbnailSm : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Black_photo.jpg/450px-Black_photo.jpg"}" alt="">
                             </a>    
                         </div>`
         let articleContainer = document.getElementById('fourRandomArticles')
@@ -162,7 +162,7 @@ const showAllArticles = (articles) => {
                     </div>
                     <div class="article-image">
                         <a class="href-reset" href="selectedArticle.html?id=${article._id}">
-                            <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                            <img src="${article.thumbnailSm ? article.thumbnailSm : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Black_photo.jpg/450px-Black_photo.jpg"}" alt="">
                         </a>    
                     </div>
                 </div>`

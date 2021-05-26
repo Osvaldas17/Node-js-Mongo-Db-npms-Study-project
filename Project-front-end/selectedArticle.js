@@ -36,6 +36,7 @@ const getSelectedArticle = async () => {
     let url_string = window.location.href;
     let url1 = new URL(url_string);
     let id = url1.searchParams.get("id")
+    console.log(id)
 
     let body = {
         id
@@ -71,12 +72,6 @@ const logOut = () => {
 
 
     window.location.href = 'index.html'
-}
-
-function renderLimitedContent(x) {
-    x = x.split(' ').slice(0, 15)
-    x = x.join(' ')
-    return x + '...'
 }
 
 function calcReadTime(x) {
@@ -133,3 +128,4 @@ const bookmarkArticle = (id) => {
         body: JSON.stringify(body)
     })
 }
+

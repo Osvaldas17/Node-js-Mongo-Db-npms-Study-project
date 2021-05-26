@@ -83,7 +83,7 @@ const showMyArticles = (articles) => {
                     </div>
                     <div class="article-image">
                         <a class="href-reset" href="selectedArticle.html?id=${article._id}">
-                            <img src="${article.mainArticleImage ? article.mainArticleImage : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"}" alt="">
+                            <img src="${article.thumbnailSm ? article.thumbnailSm : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Black_photo.jpg/450px-Black_photo.jpg"}" alt="">
                         </a>
                     </div>
                 </div>`
