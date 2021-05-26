@@ -201,7 +201,6 @@ header {
     font-weight: 400;
     margin-bottom: 80px;
 }
-<<<<<<< HEAD
 footer {
     background-color:  rgb(25,25,25);
     height: 100px;
@@ -213,99 +212,4 @@ footer {
 .bookmark-btn:active {
     color: black;
     transform: scale(1);
-=======
-/* footer {
-    background-color:  rgb(25,25,25);
-    height: 100px;
-} */
-
-/* clap and comment */
-
-.article-claps-con {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.clap-image {
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-}
-
-.clap-image:active {
-    width: 22px;
-    height: 22px;
-}
-
-.claps-count {
-    width: 25px;
-    height: 25px;
-}
-
-/* comment */
-
-.comment-input {
-    height: 40px;
-    width: 50%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: rgb(255, 255, 255) solid 1px;
-    background-color:  rgb(240,242,245);
-}
-
-.comment-input:active {
-    border: white 1px solid;
-}
-
-.com-con {
-    margin: 0 auto;
-    width: 45%;
-    height: 100px;
-    display: flex;
-    margin-top: 5px;
-}
-
-.comments-con {
-    margin-top: 100px;
-    width: 100%;
-    height: 100px;
-
-}
-
-.comment-user {
-    display: flex;
-    width: 100%;
-    height: 30px;
-    margin: 10px 10px 10px 15px;
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.comment-content {
-    width: 100%;
-    margin-left: 15px;
-}
-
-.profile-pic img {
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-}
-
-.coment-date {
-    margin-left: 10px;
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: rgba(117, 117, 117, 1);
-}
-
-.all-comment-content {
-    padding-right: 20px;
-    background-color: rgb(240,242,245);
-    border-radius: 15px;
->>>>>>> Vilmanto
 }
