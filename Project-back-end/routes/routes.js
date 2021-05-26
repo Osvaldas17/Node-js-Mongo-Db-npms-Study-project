@@ -4,6 +4,10 @@ const multer = require('multer')
 const articleController = require('../controllers/articleControler')
 const userController = require('../controllers/userController')
 const authenticateMiddleware = require('../middleware/authenticate')
+<<<<<<< HEAD
+=======
+const commentController = require('../controllers/commentController')
+>>>>>>> Vilmanto
 
 
 const storage = multer.diskStorage({
@@ -20,7 +24,11 @@ const upload = multer({
 })
 
 router.route('/article')
+<<<<<<< HEAD
     .post(authenticateMiddleware.authenticate, upload.single('mainArticleImage'),articleController.createArticle)
+=======
+    .post(authenticateMiddleware.authenticate, upload.single('mainArticleImage'), articleController.createArticle)
+>>>>>>> Vilmanto
     .get(articleController.getArticles)
 router.route('/getOneArticle')
     .get(articleController.getOneLatestArticle)
@@ -36,12 +44,20 @@ router.route('/getTrendingArticles')
     .get(articleController.getTrendingArticles)
 router.route('/getSelectedArticle')
     .post(articleController.getSelectedArticle)
+<<<<<<< HEAD
 router.route('/removeFromBookmark')
     .post(authenticateMiddleware.authenticate, articleController.removeFromBookmark)
 router.route('/bookmarkArticle')
     .post(authenticateMiddleware.authenticate, articleController.bookmarkArticle)
 router.route('/getBookmarkedArticles')
     .get(authenticateMiddleware.authenticate, articleController.getBookmarkedArticles)
+=======
+router.route('/comment')
+    .post(authenticateMiddleware.authenticate, commentController.createComment)
+    .get(commentController.getComments)
+router.route('/articleComments')
+    .get(commentController.getArticleComments)
+>>>>>>> Vilmanto
 
 
 router.route('/user/signUp').post(userController.signUp)
