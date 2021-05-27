@@ -2,7 +2,7 @@ const Article = require('../models/articleModel')
 const sharp = require('sharp')
 
 const getArticles = async (req, res) => {
-    let allArticles = await Article.find().populate('userId')
+    let allArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId')
     res.send(allArticles)
 }
 
@@ -53,7 +53,7 @@ const getOneLatestArticle = async (req, res) => {
     let oneArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(1)
     res.send(oneArticles)
 }
-const getFiveLatestArticles = async (req, res) => {
+const getFourRandomArticles = async (req, res) => {
     let getFourRandomArticles = await Article.find().sort({ createdAt: -1 } ).populate('userId').limit(5)
     res.send(getFourRandomArticles)
 }
@@ -72,7 +72,6 @@ const createArticle = async (req, res) => {
         .jpeg({quality: 50})
         .toFile(path1)
 
-    console.log('path',path)
 
     try {
 
@@ -100,52 +99,35 @@ const deleteArticle = async (req, res) => {
 }
 
 const bookmarkArticle = async (req, res) => {
-    try {
-        if (!req.body._id) throw {
-            message: 'Provide article id'
-        }
-        let article = await Article.findOneAndUpdate({
-            _id: req.body._id
-        }, {
-            bookmarked: true
+    let user = req.user
 
-        }, {
-            new: true
-        })
+    let articleId = req.body.articleId
+    let bookmarks = req.user.bookmarks
 
-        res.send(article)
-
-    } catch (e) {
-        res.status(400).send(e)
+    if (req.body.articleId && bookmarks.indexOf(articleId) <= 0) {
+        user.bookmarks.push(req.body.articleId)
+        await user.save()
     }
+    res.send(user)
 }
+
 const removeFromBookmark = async (req, res) => {
-    try {
-        if (!req.body._id) throw {
-            message: 'Provide article id'
-        }
-        let article = await Article.findOneAndUpdate({
-            _id: req.body._id
-        }, {
-            bookmarked: false
+    let user = req.user
 
-        }, {
-            new: true
-        })
-
-        res.send(article)
-
-    } catch (e) {
-        res.status(400).send(e)
+    if (req.body.articleId) {
+        user.bookmarks.remove(req.body.articleId)
+        await user.save()
     }
+    res.send(user)
 }
+
 
 const getBookmarkedArticles = async (req, res) => {
-    let articles = await Article.find({
-        bookmarked: true
-    }).populate('userId')
-    res.send(articles)
+    let articleIds = req.user.bookmarks
+    let bookmarks = await Article.find().where('_id').in(articleIds).exec();
+    res.send(bookmarks)
 }
+
 
 const getMyArticles = async (req, res) => {
     let articles = await Article.find({
@@ -162,7 +144,7 @@ module.exports = {
     getMyArticles,
     deleteArticle,
     getOneLatestArticle,
-    getFiveLatestArticles,
+    getFourRandomArticles,
     getSelectedArticle,
     bookmarkArticle,
     getBookmarkedArticles,

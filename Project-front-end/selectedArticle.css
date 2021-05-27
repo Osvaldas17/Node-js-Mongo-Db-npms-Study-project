@@ -213,7 +213,6 @@ footer {
     color: black;
     transform: scale(1);
 }
-
 /* clap and comment */
 
 .clap-image {
@@ -300,7 +299,6 @@ textarea {
 .delete-comment:active {
     color: rgb(102,104,107);
 }
-
 .comment-content {
     width: 100%;
     padding: 20px;

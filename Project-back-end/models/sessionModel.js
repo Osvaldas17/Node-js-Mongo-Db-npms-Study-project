@@ -13,7 +13,6 @@ const sessionSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-
 })
 
 const Session = mongoose.model('Session', sessionSchema)

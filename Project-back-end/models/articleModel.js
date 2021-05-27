@@ -29,10 +29,6 @@ const articleSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    bookmarked: {
-      type: Boolean,
-      default: false
-    },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

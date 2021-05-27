@@ -82,7 +82,7 @@ const logOut = () => {
 
 const removeFromBookmark = (id) => {
     let body = {
-        _id: id
+        articleId: id
     }
     fetch(`${url}/removeFromBookmark`, {
         method: 'POST',

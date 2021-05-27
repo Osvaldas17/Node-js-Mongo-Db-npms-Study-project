@@ -121,10 +121,9 @@ const renderArticle = (article) => {
     articleContainer.innerHTML += singleArticle
 }
 
-
-const bookmarkArticle = (id) => {
+const bookmarkArticle = (articleId) => {
     let body = {
-        _id: id
+        articleId: articleId
     }
     fetch(`${url}/bookmarkArticle`, {
         method: 'POST',
@@ -135,6 +134,7 @@ const bookmarkArticle = (id) => {
         body: JSON.stringify(body)
     })
 }
+
 
 //////////////////
 

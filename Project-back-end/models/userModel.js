@@ -22,7 +22,12 @@ const userSchema = new mongoose.Schema({
     },
     profileImage: {
         type: String,
-    }
+    },
+    bookmarks: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+        }
+    ]
 }, {
     toJSON: {
         transform(doc, ret) {
