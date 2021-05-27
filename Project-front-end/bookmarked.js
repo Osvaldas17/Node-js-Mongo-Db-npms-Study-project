@@ -95,7 +95,7 @@ const removeFromBookmark = (id) => {
 }
 
 const showBookmarkedArticles = (articles) => {
-    console.log(articles)
+    console.log('bookmarkedArticles',articles)
     for (let article of articles) {
         let myArticles = `<div class="article-container">
                     <div class="article-text">

@@ -102,7 +102,7 @@ const renderArticle = (article) => {
                     </div>
                 </div>
                 <div class="bookmark">
-                    <i onclick="${bookmarkArticle(article._id)}" class="far fa-bookmark bookmark-btn"></i>
+                    <i onclick='bookmarkArticle("${article._id}")' class="far fa-bookmark bookmark-btn"></i>
                 </div>
             </div>
             <div>

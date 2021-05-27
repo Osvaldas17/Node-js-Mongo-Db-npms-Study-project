@@ -124,8 +124,9 @@ const removeFromBookmark = async (req, res) => {
 
 const getBookmarkedArticles = async (req, res) => {
     let articleIds = req.user.bookmarks
-    let bookmarks = await Article.find().where('_id').in(articleIds).exec();
+    let bookmarks = await Article.find().populate('userId').where('_id').in(articleIds).exec();
     res.send(bookmarks)
+
 }
 
 
