@@ -47,6 +47,8 @@ router.route('/comment')
     .post(authenticateMiddleware.authenticate, commentController.createComment)
 router.route('/articleComments')
     .post(commentController.getArticleComments)
+router.route('/deleteComment')
+    .post(authenticateMiddleware.authenticate, commentController.deleteComment)
 
 
 router.route('/user/signUp').post(userController.signUp)

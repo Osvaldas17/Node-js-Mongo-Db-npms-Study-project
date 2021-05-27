@@ -24,7 +24,15 @@ const createComment = async (req, res) => {
 
 }
 
+const deleteComment = async (req, res) => {
+    Comment.deleteOne({ _id: req.body._id }, function (err) {
+        if (err) throw (err);
+    });
+    res.send(Comment)
+}
+
 module.exports = {
     createComment,
-    getArticleComments
+    getArticleComments,
+    deleteComment
 }

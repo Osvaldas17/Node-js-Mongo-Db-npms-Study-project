@@ -188,8 +188,6 @@ const getArticleComments = async () => {
 
 document.querySelector('#comment-btn').addEventListener('click',() => {
     sendCommentToBackEnd()
-    let path = window.location.href
-    window.location.href = path
 })
 
 const sendCommentToBackEnd = async() => {
@@ -219,6 +217,10 @@ const sendCommentToBackEnd = async() => {
                 }
             )
             if (response.status != 200) throw await response.json()
+
+            let path = window.location.href
+            window.location.href = path
+
         } catch (e) {
             console.log(e)
         }
@@ -234,8 +236,13 @@ const showComments = (comments) => {
                     <div class="comment-profile-info">
                         <img class="profile-pic" src="${comment.userId && comment.userId.profileImage ? comment.userId.profileImage : "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"}" alt="">
                         <div class="comment-user">
-                            <span>${comment.userId.userName}</span>
-                            <span class="comment-date">${comment.createdAtComment.slice(0, 10)}</span>
+                            <div>
+                                <span>${comment.userId.userName}</span>
+                                <span class="comment-date">${comment.createdAtComment.slice(0, 10)}</span>
+                            </div>
+                            <div>
+                                <button onclick="deleteComment(this,'${comment._id}','${user._id}','${comment.userId._id}')" class="delete-comment">X</button>
+                            </div>
                         </div>
                     </div>
                         <p class="comment-content">${comment.commentContent}</p>
@@ -244,6 +251,27 @@ const showComments = (comments) => {
         let commentSpace = document.querySelector('#comment-space')
         commentSpace.innerHTML += commentRender
 
+    }
+}
+
+const deleteComment = (el,id,currentUser,commentUser) => {
+
+    if (currentUser === commentUser) {
+        let body = {
+            _id: id
+        }
+        fetch(`${url}/deleteComment`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'projectauth': token
+            },
+            body: JSON.stringify(body)
+        })
+        let path = window.location.href
+        window.location.href = path
+    } else {
+        alert('you cant delete other people comments')
     }
 }
 

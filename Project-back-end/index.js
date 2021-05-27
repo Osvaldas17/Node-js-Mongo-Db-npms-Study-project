@@ -2,10 +2,8 @@
 require('dotenv').config()
 
 const express = require('express')
-// body parser leidzia duomenis gauti ir siusti json formatu
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const sharp = require('sharp')
 
 const corsOptions = {
     allowedHeaders: ['projectauth', 'Content-Type'],

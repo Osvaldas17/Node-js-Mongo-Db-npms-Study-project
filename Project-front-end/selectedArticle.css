@@ -280,6 +280,7 @@ textarea {
 }
 
 .comment-user {
+    justify-content: space-between;
     align-items: center;
     display: flex;
     width: 100%;
@@ -288,6 +289,16 @@ textarea {
     font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
+}
+.delete-comment {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    font-weight: 500;
+}
+.delete-comment:active {
+    color: rgb(102,104,107);
 }
 
 .comment-content {

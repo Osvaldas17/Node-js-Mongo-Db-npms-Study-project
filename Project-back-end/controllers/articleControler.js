@@ -166,5 +166,5 @@ module.exports = {
     getSelectedArticle,
     bookmarkArticle,
     getBookmarkedArticles,
-    removeFromBookmark
+    removeFromBookmark,
 }
