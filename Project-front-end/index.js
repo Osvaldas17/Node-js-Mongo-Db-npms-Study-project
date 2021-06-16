@@ -157,7 +157,7 @@ function renderLimitedContentInMain(x) {
 }
 
 function calcReadTimeInMain(x) {
-    x = x / 300
+    x = x / 800
     let y = Math.ceil(x)
     return y + ' min read'
 }
